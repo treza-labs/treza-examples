@@ -1,0 +1,154 @@
+{
+  "name": "Treza: a vertical video every morning",
+  "nodes": [
+    {
+      "id": "a693eb3e-9317-57fc-9764-6851f1ee8f49",
+      "name": "About this workflow",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -260
+      ],
+      "parameters": {
+        "width": 420,
+        "height": 380,
+        "content": "## A vertical video every morning\nAt 9:00 this picks today's prompt, has Treza render a 4 second 9:16 clip and hands the file to the last node.\n\n**Set up**\n1. Install the community node `@treza/n8n-nodes-treza` (Settings > Community Nodes).\n2. Open **Generate the video** and pick your **Treza API** credential.\n3. Edit the prompts in **Today's prompt**.\n4. Replace the last node with your upload.\n\n**Cost:** about $0.28 a day on Treza's default model. **Max Cost** is $1: Treza prices each clip first, and a clip over the cap is never started."
+      }
+    },
+    {
+      "id": "774abad5-4aa4-58dd-b424-12279a928a16",
+      "name": "Every morning",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3f15ac47-c948-54b4-9a74-8c762228423a",
+      "name": "Today's prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9c4dff2f-21ef-5519-bb47-56f092d6de57",
+              "name": "prompt",
+              "type": "string",
+              "value": "={{ [\"A sea otter floats on its back at sunrise, cracking a shell on its chest, gentle swell, soft gold light\", \"A paper lantern drifts up over a still lake at dusk, reflections on the water, slow tilt up\", \"Fresh snow falls on a red mailbox in a quiet street at night, warm streetlight glow, slow push in\"][$now.ordinal % 3] }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c4add336-ce85-537e-8c35-39f3e648c440",
+      "name": "Generate the video",
+      "type": "@treza/n8n-nodes-treza.treza",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "resource": "video",
+        "operation": "generate",
+        "prompt": "={{ $json.prompt }}",
+        "aspectRatio": "9:16",
+        "durationSec": 4,
+        "maxCostUsd": 1,
+        "additionalFields": {
+          "name": "={{ 'Daily clip ' + $now.toFormat('yyyy-MM-dd') }}"
+        },
+        "download": true,
+        "binaryPropertyName": "video"
+      }
+    },
+    {
+      "id": "8606345a-ef5f-584c-a620-dc15c768f63f",
+      "name": "Upload the video (replace me)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "7c298796-f380-55a2-9ff9-80109a31bfad",
+      "name": "Note: upload",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        600,
+        -260
+      ],
+      "parameters": {
+        "width": 360,
+        "height": 220,
+        "color": 7,
+        "content": "## Replace with your upload\nSwap this node for YouTube (Upload a Video), Google Drive (Upload File), S3 or an HTTP Request. The clip is in the binary field `video`. `url` is its Treza link, and `estimatedChargeUsd` is what it cost."
+      }
+    }
+  ],
+  "connections": {
+    "Every morning": {
+      "main": [
+        [
+          {
+            "node": "Today's prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Today's prompt": {
+      "main": [
+        [
+          {
+            "node": "Generate the video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate the video": {
+      "main": [
+        [
+          {
+            "node": "Upload the video (replace me)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

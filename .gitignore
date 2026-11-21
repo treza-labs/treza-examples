@@ -1,0 +1,33 @@
+# Keys
+.env
+.env.*
+!.env.example
+treza_api_key.txt
+
+# What the recipes make
+*.mp4
+*.mov
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp3
+*.wav
+output/
+outputs/
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+package-lock.json
+dist/
+
+.DS_Store

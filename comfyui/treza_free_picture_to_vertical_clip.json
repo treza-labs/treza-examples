@@ -1,0 +1,488 @@
+{
+  "id": "9e7fd6a3-c42c-5091-a3e3-62238b61973e",
+  "revision": 0,
+  "last_node_id": 5,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "TrezaGenerateImage",
+      "pos": [
+        60,
+        220
+      ],
+      "size": [
+        420,
+        330
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "reference_images",
+          "name": "reference_images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "shape",
+          "name": "shape",
+          "type": "COMBO",
+          "widget": {
+            "name": "shape"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_cost_usd",
+          "name": "max_cost_usd",
+          "type": "FLOAT",
+          "widget": {
+            "name": "max_cost_usd"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "wait_minutes",
+          "name": "wait_minutes",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "wait_minutes"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            1,
+            2
+          ]
+        },
+        {
+          "localized_name": "url",
+          "name": "url",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "localized_name": "price_usd",
+          "name": "price_usd",
+          "type": "FLOAT",
+          "slot_index": 2,
+          "links": []
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "STRING",
+          "slot_index": 3,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TrezaGenerateImage"
+      },
+      "widgets_values": [
+        "A red fox sitting in fresh snow at the edge of a pine forest, soft morning light, breath visible, vertical portrait",
+        "9:16",
+        0.01,
+        1,
+        "fixed",
+        "",
+        5
+      ],
+      "widgets_values_named": {
+        "prompt": "A red fox sitting in fresh snow at the edge of a pine forest, soft morning light, breath visible, vertical portrait",
+        "shape": "9:16",
+        "max_cost_usd": 0.01,
+        "seed": 1,
+        "control_after_generate": "fixed",
+        "model": "",
+        "wait_minutes": 5
+      },
+      "title": "Free picture (Treza Generate Image)"
+    },
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": [
+        540,
+        20
+      ],
+      "size": [
+        320,
+        260
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 3,
+      "type": "TrezaGenerateVideo",
+      "pos": [
+        540,
+        330
+      ],
+      "size": [
+        420,
+        400
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "shape",
+          "name": "shape",
+          "type": "COMBO",
+          "widget": {
+            "name": "shape"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seconds",
+          "name": "seconds",
+          "type": "INT",
+          "widget": {
+            "name": "seconds"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "with_audio",
+          "name": "with_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "with_audio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_cost_usd",
+          "name": "max_cost_usd",
+          "type": "FLOAT",
+          "widget": {
+            "name": "max_cost_usd"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "wait_minutes",
+          "name": "wait_minutes",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "wait_minutes"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "slot_index": 0,
+          "links": [
+            3
+          ]
+        },
+        {
+          "localized_name": "url",
+          "name": "url",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "localized_name": "price_usd",
+          "name": "price_usd",
+          "type": "FLOAT",
+          "slot_index": 2,
+          "links": []
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "STRING",
+          "slot_index": 3,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TrezaGenerateVideo"
+      },
+      "widgets_values": [
+        "The fox lifts its head, sniffs the air and turns toward the camera, snowflakes drifting, slow push in",
+        "9:16",
+        4,
+        true,
+        0.5,
+        1,
+        "fixed",
+        "",
+        15
+      ],
+      "widgets_values_named": {
+        "prompt": "The fox lifts its head, sniffs the air and turns toward the camera, snowflakes drifting, slow push in",
+        "shape": "9:16",
+        "seconds": 4,
+        "with_audio": true,
+        "max_cost_usd": 0.5,
+        "seed": 1,
+        "control_after_generate": "fixed",
+        "model": "",
+        "wait_minutes": 15
+      },
+      "title": "Animate it (Treza Generate Video)"
+    },
+    {
+      "id": 4,
+      "type": "SaveVideo",
+      "pos": [
+        1020,
+        330
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "link": 3
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "codec",
+          "name": "format.codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format.codec"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "codec",
+          "name": "codec",
+          "shape": 7,
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "slot_index": 0,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/treza-fox",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/treza-fox",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 5,
+      "type": "Note",
+      "pos": [
+        60,
+        20
+      ],
+      "size": [
+        420,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Needs a Treza API key: set TREZA_API_KEY before starting ComfyUI, or save the key in user/treza_api_key.txt.\nThe picture's max_cost_usd is 0.01, so only one of today's free pictures renders (5 a day). Once they are used up it stops with nothing spent.\nThe clip opens on the picture: 4 s, 9:16, about $0.28, capped at $0.50.\nChange seed to render again."
+      ],
+      "widgets_values_named": {
+        "text": "Needs a Treza API key: set TREZA_API_KEY before starting ComfyUI, or save the key in user/treza_api_key.txt.\nThe picture's max_cost_usd is 0.01, so only one of today's free pictures renders (5 a day). Once they are used up it stops with nothing spent.\nThe clip opens on the picture: 4 s, 9:16, about $0.28, capped at $0.50.\nChange seed to render again."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5566071428571429,
+      "offset": [
+        183.33333333333337,
+        284.86044273339746
+      ]
+    }
+  },
+  "version": 0.4
+}
