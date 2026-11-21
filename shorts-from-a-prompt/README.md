@@ -2,6 +2,8 @@
 
 [`make_short.py`](make_short.py) turns a topic into a finished 18 second vertical Short: a voiceover, three clips, a composed music bed and burned-in captions, at 1080x1920. It needs only `requests`.
 
+**Status:** tested against a local copy of Treza's API, not yet end to end on the live service. If a step fails, please open an issue with the message it printed.
+
 1. **Script.** A small pipeline in your account writes a 35 to 45 word voiceover, reads it aloud (Treza's default voice) and plans three shots that illustrate it. The script creates this pipeline on its first run, named `Short script (treza-examples v1)`, and reuses it after that. It is built with `create_pipeline` from four node types: Text Input, Text Generation, Text to Speech and Output.
 2. **Clips.** `make_video` renders each shot as a silent 6 second 9:16 clip. The voiceover and music are the sound, and silent clips cost less.
 3. **Assembly.** `assemble_video` cuts the three clips together with fades, lays the voiceover over them, composes a music bed from `--music` and ducks it under the voice, burns in captions and fades out the ending.
