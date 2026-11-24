@@ -97,6 +97,7 @@ Every recipe reads `TREZA_BASE_URL` (default `https://www.trezalabs.com`), the s
 | Zapier | [Treza on Zapier](https://www.trezalabs.com/integrations/zapier) | [treza-labs/treza-zapier](https://github.com/treza-labs/treza-zapier) |
 | x402 (pay per video with a wallet) | | [treza-labs/x402-video-example](https://github.com/treza-labs/x402-video-example) |
 | Claude, ChatGPT, Cursor and other MCP clients | MCP server at `https://www.trezalabs.com/api/mcp` | [treza-labs/treza-plugin](https://github.com/treza-labs/treza-plugin) |
+| Replit Agent | [Treza in Replit](https://www.trezalabs.com/integrations/replit), [![Add to Replit](https://replit.com/badge?caption=Add%20to%20Replit)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IlRyZXphIiwiYmFzZVVybCI6Imh0dHBzOi8vd3d3LnRyZXphbGFicy5jb20vYXBpL21jcCJ9) | |
 | GitHub Actions | | [treza-labs/render-video](https://github.com/treza-labs/render-video) |
 
 Setup steps for each of them are at [trezalabs.com/integrations](https://www.trezalabs.com/integrations).
