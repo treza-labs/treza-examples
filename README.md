@@ -92,7 +92,7 @@ Every recipe reads `TREZA_BASE_URL` (default `https://www.trezalabs.com`), the s
 | CrewAI | [`crewai-treza`](https://pypi.org/project/crewai-treza/) | [treza-labs/crewai-treza](https://github.com/treza-labs/crewai-treza) |
 | Langflow | [`lfx-treza`](https://pypi.org/project/lfx-treza/) | [treza-labs/lfx-treza](https://github.com/treza-labs/lfx-treza) |
 | n8n | [`@treza/n8n-nodes-treza`](https://www.npmjs.com/package/@treza/n8n-nodes-treza) | [treza-labs/n8n-nodes-treza](https://github.com/treza-labs/n8n-nodes-treza) |
-| ComfyUI | [`treza` on the Comfy Registry](https://registry.comfy.org/nodes/treza) | [treza-labs/treza-comfyui](https://github.com/treza-labs/treza-comfyui) |
+| ComfyUI | `git clone` into `custom_nodes` (the [Comfy Registry](https://registry.comfy.org/nodes/treza) listing is in review) | [treza-labs/treza-comfyui](https://github.com/treza-labs/treza-comfyui) |
 | Dify | [Dify Marketplace](https://marketplace.dify.ai/plugins/treza-labs/treza) | [treza-labs/treza-dify-plugin](https://github.com/treza-labs/treza-dify-plugin) |
 | Zapier | [Treza on Zapier](https://www.trezalabs.com/integrations/zapier) | [treza-labs/treza-zapier](https://github.com/treza-labs/treza-zapier) |
 | x402 (pay per video with a wallet) | | [treza-labs/x402-video-example](https://github.com/treza-labs/x402-video-example) |

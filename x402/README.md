@@ -44,7 +44,7 @@ PRIVATE_KEY=0x... npx tsx buy-video.ts
 
 ## Cost
 
-The 402 challenge quotes the price before any money moves. The default clip, 5 seconds on Hailuo 3 (`minimax-h3`), is $0.42 in USDC. Other models and lengths run from $0.42 to $4.90. `GET https://www.trezalabs.com/api/x402/video` lists them with their prices.
+The 402 challenge quotes the price before any money moves. The default clip, 5 seconds on Hailuo 3 (`minimax-h3`), is $0.42 in USDC. Other models and lengths run from $0.28 (4 seconds on `veo-3.1-lite`) to $4.90. `GET https://www.trezalabs.com/api/x402/video` lists them with their prices.
 
 `maxAmountPerPayment` is the most one payment may be. The snippet sets $1, enough for the default clip. Raise it for longer clips or other models.
 

@@ -13,7 +13,7 @@ The renders run on Treza's servers, so they need no GPU or model downloads.
 
 ## Run
 
-1. Install the pack: search for **Treza** in ComfyUI-Manager, or `git clone https://github.com/treza-labs/treza-comfyui treza` inside `ComfyUI/custom_nodes`. It needs ComfyUI 0.3.45 or newer.
+1. Install the pack: `git clone https://github.com/treza-labs/treza-comfyui treza` inside `ComfyUI/custom_nodes`. It needs ComfyUI 0.3.45 or newer. ComfyUI-Manager and comfy-cli can't install it yet, because the Comfy Registry is holding versions 0.1.0 and 0.1.1 for review; searching for **Treza** in ComfyUI-Manager will work again once the Registry lists them.
 2. Make a Treza key at https://www.trezalabs.com/platform/api-keys with the `pipelines:read`, `pipelines:write` and `pipelines:run` permissions. Give it to ComfyUI as the `TREZA_API_KEY` environment variable, or as the only line of `user/treza_api_key.txt`, then restart ComfyUI. The key is never saved in the workflow.
 3. Drag `treza_free_picture_to_vertical_clip.json` onto the ComfyUI canvas, or open it from **Workflow → Open**.
 4. Edit the two prompts and press **Run**.
